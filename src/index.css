@@ -1,0 +1,51 @@
+:root {
+  --bg-color: #050511; /* Deep space navy */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-gold: #fbbf24;
+  --accent-red: #f43f5e;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.2);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-color);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--glass-border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--glass-highlight);
+}
+
+.container {
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* TypographyUtils */
+.gradient-text {
+  background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
