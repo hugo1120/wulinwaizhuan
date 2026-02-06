@@ -83,6 +83,15 @@ function App() {
         <ImageViewer
           image={selectedImage}
           onClose={() => setSelectedImage(null)}
+          onNavigate={(direction) => {
+            const currentIndex = data.findIndex(item => item.p === selectedImage.p);
+            if (currentIndex === -1) return;
+            
+            const nextIndex = currentIndex + direction;
+            if (nextIndex >= 0 && nextIndex < data.length) {
+              setSelectedImage(data[nextIndex]);
+            }
+          }}
         />
       )}
     </div>

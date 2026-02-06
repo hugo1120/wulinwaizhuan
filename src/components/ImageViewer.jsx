@@ -2,14 +2,16 @@ import React, { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import config from '../config';
 
-const ImageViewer = ({ image, onClose }) => {
+const ImageViewer = ({ image, onClose, onNavigate }) => {
     useEffect(() => {
-        const handleEsc = (e) => {
+        const handleKeyDown = (e) => {
             if (e.key === 'Escape') onClose();
+            if (e.key === 'ArrowLeft') onNavigate(-1);
+            if (e.key === 'ArrowRight') onNavigate(1);
         };
-        window.addEventListener('keydown', handleEsc);
-        return () => window.removeEventListener('keydown', handleEsc);
-    }, [onClose]);
+        window.addEventListener('keydown', handleKeyDown);
+        return () => window.removeEventListener('keydown', handleKeyDown);
+    }, [onClose, onNavigate]);
 
     if (!image) return null;
 
@@ -22,6 +24,16 @@ const ImageViewer = ({ image, onClose }) => {
                 exit={{ opacity: 0 }}
                 onClick={onClose}
             >
+                <div
+                    className="nav-button nav-left"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onNavigate(-1);
+                    }}
+                >
+                    ‹
+                </div>
+
                 <motion.div
                     className="modal-content"
                     initial={{ scale: 0.9, opacity: 0 }}
@@ -41,6 +53,16 @@ const ImageViewer = ({ image, onClose }) => {
                         </div>
                     </div>
                 </motion.div>
+
+                <div
+                    className="nav-button nav-right"
+                    onClick={(e) => {
+                        e.stopPropagation();
+                        onNavigate(1);
+                    }}
+                >
+                    ›
+                </div>
             </motion.div>
         </AnimatePresence>
     );

@@ -135,3 +135,57 @@
     font-size: 1.25rem;
     color: white;
 }
+
+/* Navigation Buttons */
+.nav-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 1010;
+    user-select: none;
+}
+
+.nav-button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.nav-button:active {
+    transform: translateY(-50%) scale(0.95);
+}
+
+.nav-left {
+    left: 40px;
+}
+
+.nav-right {
+    right: 40px;
+}
+
+@media (max-width: 768px) {
+    .nav-button {
+        width: 44px;
+        height: 44px;
+        font-size: 1.5rem;
+    }
+    
+    .nav-left {
+        left: 10px;
+    }
+    
+    .nav-right {
+        right: 10px;
+    }
+}
