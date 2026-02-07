@@ -1,51 +1,16 @@
-# 武林外传电子相册 (Wulin Quotes)
+# React + Vite
 
-一个极速、美观的武林外传台词检索应用。基于 React + Vite 构建，专为 Cloudflare Pages 部署优化。
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🌟 功能特性
+Currently, two official plugins are available:
 
-- **极速检索**: 基于 Fuse.js 的模糊搜索，支持拼音/汉字。
-- **性能飞跃**: 使用 Virtual Scroll (虚拟滚动) 技术，流畅加载数千张剧照。
-- **沉浸体验**:
-  - 🎭 **武林风 UI**: 书法字体与深色玻璃拟态设计。
-  - 🔄 **上下文浏览**: 支持左右切换查看连贯剧情（按剧集原始顺序）。
-  - 🎲 **手气不错**: 随机回顾经典台词。
-- **易用功能**:
-  - 🔗 **链接分享**: URL 同步搜索词和图片 ID，方便分享。
-  - 📋 **一键复制**: 快速复制台词文本。
-  - ⬇️ **原图下载**: 保存高清剧照。
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## 🛠️ 技术栈
+## React Compiler
 
-- **Frontend**: React, Vite
-- **Styling**: CSS Modules, Framer Motion
-- **Performance**: react-virtuoso (虚拟列表)
-- **Search**: Fuse.js
-- **Deployment**: Cloudflare Pages (静态托管)
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 📦 部署说明
+## Expanding the ESLint configuration
 
-本项目已配置为纯前端静态应用。
-
-1. **构建**:
-   ```bash
-   npm install
-   npm run build
-   ```
-2. **输出**: `dist` 目录。
-3. **Cloudflare Pages**:
-   - 连接 GitHub 仓库。
-   - 构建命令: `npm run build`
-   - 构建输出目录: `dist`
-
-> **注意**: 图片资源托管在 R2/CDN，无需包含在 git 仓库中。
-
-## 🤝 贡献代码
-
-欢迎提交 Issue 或 Pull Request。
-
-```bash
-# 本地开发
-npm install
-npm run dev
-```
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.

@@ -6,8 +6,6 @@ import ImageViewer from './components/ImageViewer';
 import './index.css';
 import './styles/components.css';
 
-import RouterHandler from './components/RouterHandler';
-
 function App() {
   const [data, setData] = useState([]);
   const [query, setQuery] = useState('');
@@ -50,40 +48,26 @@ function App() {
     if (fuse) {
       // Fuse search
       const fuseResults = fuse.search(query);
+      // Increased limit to 1000 as requested to avoid hiding results
       return fuseResults.slice(0, 1000).map(result => result.item);
     }
 
+    // Fallback if fuse not ready (shouldn't happen often)
     return data.filter(item => item.t.toLowerCase().includes(query.toLowerCase())).slice(0, 1000);
 
   }, [query, fuse, data]);
 
-  const handleRandom = () => {
-    if (data.length > 0) {
-      const randomImage = data[Math.floor(Math.random() * data.length)];
-      setSelectedImage(randomImage);
-    }
-  };
-
   return (
     <div className="app">
-      <RouterHandler
-        data={data}
-        query={query}
-        selectedImage={selectedImage}
-        setQuery={setQuery}
-        setSelectedImage={setSelectedImage}
-      />
-
       <SearchHeader
         value={query}
         onChange={setQuery}
         resultCount={results.length}
-        onRandom={handleRandom}
       />
 
       {!query && !loading && (
         <div style={{ textAlign: 'center', marginTop: '20vh', opacity: 0.5 }}>
-          <h2 className="gradient-text" style={{ fontSize: '2rem', fontFamily: '"Ma Shan Zheng", cursive' }}>武林外传 · 台词检索</h2>
+          <h2 className="gradient-text" style={{ fontSize: '2rem' }}>武林外传 · 台词检索</h2>
           <p>共收录 {data.length} 张剧照</p>
         </div>
       )}
@@ -102,7 +86,7 @@ function App() {
           onNavigate={(direction) => {
             const currentIndex = data.findIndex(item => item.p === selectedImage.p);
             if (currentIndex === -1) return;
-
+            
             const nextIndex = currentIndex + direction;
             if (nextIndex >= 0 && nextIndex < data.length) {
               setSelectedImage(data[nextIndex]);

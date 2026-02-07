@@ -155,23 +155,6 @@
     transition: all 0.2s ease;
     z-index: 1010;
     user-select: none;
-    backdrop-filter: blur(4px);
-}
-
-.action-btn {
-    background: rgba(255, 255, 255, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    color: white;
-    padding: 8px 16px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    transition: background 0.2s;
-    backdrop-filter: blur(4px);
-}
-
-.action-btn:hover {
-    background: rgba(255, 255, 255, 0.2);
 }
 
 .nav-button:hover {
@@ -197,11 +180,11 @@
         height: 44px;
         font-size: 1.5rem;
     }
-
+    
     .nav-left {
         left: 10px;
     }
-
+    
     .nav-right {
         right: 10px;
     }

@@ -1,19 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Ma+Shan+Zheng&family=Noto+Sans+SC:wght@100..900&display=swap');
-
 :root {
-  --bg-color: #0d1117;
-  /* GitHub Dark Dimmed inspired, slightly blueish */
-  --text-primary: #e6edf3;
-  --text-secondary: #8b949e;
-  --accent-gold: #d2a8ff;
-  /* Purple for modern look */
-  --accent-red: #ff7b72;
-  --glass-bg: rgba(22, 27, 34, 0.8);
-  --glass-border: rgba(48, 54, 61, 0.6);
-  --glass-highlight: rgba(56, 139, 253, 0.15);
-  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --font-main: 'Noto Sans SC', system-ui, -apple-system, sans-serif;
-  --font-title: 'Ma Shan Zheng', cursive;
+  --bg-color: #050511; /* Deep space navy */
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent-gold: #fbbf24;
+  --accent-red: #f43f5e;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --glass-highlight: rgba(255, 255, 255, 0.2);
+  --card-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -31,16 +26,13 @@ body {
 ::-webkit-scrollbar {
   width: 8px;
 }
-
 ::-webkit-scrollbar-track {
   background: var(--bg-color);
 }
-
 ::-webkit-scrollbar-thumb {
   background: var(--glass-border);
   border-radius: 4px;
 }
-
 ::-webkit-scrollbar-thumb:hover {
   background: var(--glass-highlight);
 }
@@ -54,7 +46,6 @@ body {
 /* TypographyUtils */
 .gradient-text {
   background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent-gold) 100%);
-  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
